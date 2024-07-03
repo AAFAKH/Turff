@@ -1,0 +1,12 @@
+{% extends "navbar.html" %}
+
+{% block content %}
+  <h1>Turf Listings</h1>
+  <ul>
+    {% for turf in turfs %}
+      <li>{{ turf.name }} - {{ turf.address }}</li>
+      <!-- Add a link to book the turf -->
+      <a href="{% url 'bookturf' turf.id %}">Book this turf</a>
+    {% endfor %}
+  </ul>
+{% endblock %}
